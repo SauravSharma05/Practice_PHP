@@ -8,38 +8,32 @@
 </head>
 <body>
 
-
 <form onsubmit=" return Validate()">
     Firstname: <input type="text" id="fnm" value="sdf123"> 
-    <b id="err"></b>
-    
+    <b id="err"></b>  
     <br>
-
   <button>Validate</button>
 </form>
-
 
 <script>
 
     inp_tag = document.getElementById('fnm');
     b_tag = document.getElementById('err');
-    
 
 // document.write(inp_tag.value)
 
-document.write($('#fnm').val(" "))
+document.write($('#fnm').val(""))
 
 function Validate()
 {
     if(inp_tag.value == "")
     {
-        alert("Required..!");
+        // alert("Required..!");
         b_tag.innerHTML = "Required..!";
         b_tag.style.color ="* red"
         inp_tag.style.border ="2px solid red"
         return false;
     }
-
     else 
     {
         b_tag.innerHTML = "";
