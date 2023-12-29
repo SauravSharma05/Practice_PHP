@@ -66,8 +66,9 @@
                     <!-- </div> -->
                     <div class="form-group">
                         <label for="image">Profile pic</label>
-                        <img src="<?php echo $value->image; ?>" alt="">
-                    </div>
+                        <img src="<?php echo $value->image; ?>" alt=""><br>
+                        <a href="editprofile.php?image=<?php echo $value->image; ?>">edit profile pic</a>
+                        </div>
                     <hr>
                     <div class="mb-3">
                         <button type="submit" value="<?php echo $value->dept; ?>" name="edit" class="btn btn-primary">Update</button>

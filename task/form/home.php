@@ -112,7 +112,6 @@
                     </form>
                     <a href="edit.php?id=<?php echo $value->id; ?>"><button href="" class="edit">edit</button>
                     </a>
-                    <!-- <a href="profileview.php?id=<?php echo $value->id; ?>"><button href="" class="view">View Profile</button></td> -->
                     <a href="profilemy.php?id=<?php echo $value->id; ?>"><button href="" class="view">View Profile</button></td>
                     </a>
                 </tr>
