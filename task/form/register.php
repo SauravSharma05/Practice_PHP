@@ -24,7 +24,7 @@
                 </div>
                 <form action="" class="shadow p-4" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="enter your name">
+                        <input type="text" class="form-control"  name="name" id="name" placeholder="enter your name">
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" name="email" id="email" placeholder="enter email here">
@@ -39,7 +39,7 @@
                     </div>
                     <hr>
                     <div class="mb-3">
-                        <button type="submit" name="reg" class="btn btn-primary">Register</button>
+                        <button type="submit" name="reg" onclick= "ValidateInp()" class="btn btn-primary">Register</button>
                     </div>
 
                     <hr>
@@ -56,21 +56,11 @@
     <?php
     try {
         $connection = new mysqli("localhost", "root", "", "crud_prac");   //connecting the database
-        // echo "connection done";
     } catch (\Throwable $th) {
         echo "can't connect to database";
     }
-
-
-    //user register 
-
     if (isset($_REQUEST['reg'])) {
-        // echo "<pre>";
-        // print_r($_REQUEST);
-        // print_r($_FILES);
-
         $from = $_FILES["image"]["tmp_name"];
-        // echo $from;
         $to = "../images/" . time() . $_FILES['image']['name'];
         move_uploaded_file($from, $to);
 
@@ -80,39 +70,31 @@
             "dept" => $_REQUEST['dept'],
             "image" => $to,
         );
-
         $arraykey = array_keys($data);
         $arraykey = implode(",", $arraykey);
-
         $values = array_values($data);
         $values = implode("','", $values);
-
-        // echo "<br>values : ".$values;
-        // echo "arraykeys : ".$arraykey;
-
         $sql = "INSERT INTO users ($arraykey) VALUES ('$values')";
-        // echo $sql;
-
         $sqlex = $connection->query($sql);
-        // print_r($sqlex);
-
         header('location:home.php');
     } else {
         //
     }
-
-
-
-
     ?>
-
-
-
-
-
-
-
-
 </body>
 
 </html>
+<script>
+
+input1=  document.querySelector('#name');
+input2=  document.querySelector('#dept');
+input3=  document.querySelector('#email');
+input4=  document.querySelector('#image');
+    
+            function ValidateInp()
+       {
+        if(input1.value=="" || input2.value=="" || input3.value=="" || input4.value=="")
+        {
+            alert("fields missing")
+        }}
+</script>

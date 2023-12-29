@@ -1,28 +1,14 @@
 <?php
-try {
-    $connection = new mysqli("localhost", "root", "", "crud_prac");   //connecting the database
-    // echo "connection done";
-} catch (\Throwable $th) {
-    echo "can't connect to database";
-}
-//specific userdata
+try {    $connection = new mysqli("localhost", "root", "", "crud_prac");   //connecting the database
+} catch (\Throwable $th) {}
 $id = $_REQUEST['id'];
 $sql = "SELECT * FROM users WHERE id=$id";
 $sqlex = $connection->query($sql);
-echo "<pre>";
-// print_r($sqlex);
-
 if ($sqlex->num_rows > 0) {
     while ($data = $sqlex->fetch_object()) {
-        $userdata[] = $data;
-    }
-} else {
-    //
-}
-
-//  print_r($userdata);     
+        $userdata[] = $data;}}
+ else {}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,22 +20,24 @@ if ($sqlex->num_rows > 0) {
         .contain{
             display: flex;
             justify-content: center;
-            border: 5px solid blueviolet;
-            border-radius: 20px;
+            border: 1px solid lightcoral;
 
         }
         .formbox{
-            border: 5px solid black;
+            border: 1px solid lightcoral;
             width: 70%;
             height: 500px;
             margin: 70px;
-            background-color: skyblue;
+            background-color: khaki;
             border-radius: 20px;
+            display: flex;
+            flex-direction: column;
 
         }
         .name{
             display: inline;
             margin: 0 auto;
+            margin-top: 50px;
             width: 70%;
             border: 1px solid crimson;
             display: flex;
@@ -63,6 +51,8 @@ if ($sqlex->num_rows > 0) {
         .image{
             margin: 0 auto;
             width: 350px;
+            margin-top: 25px;
+            margin-left: 450px;
         }
         img{
 

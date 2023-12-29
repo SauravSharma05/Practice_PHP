@@ -38,6 +38,9 @@
         .view {
             background-color: orange;
         }
+        body{
+            background-color: lightpink;
+        }
     </style>
 </head>
 
@@ -110,7 +113,7 @@
                     <form action="" method="post">
                         <td><button class="del" name="del" type="submit" value="<?php echo $value->id; ?>">delete</button>
                     </form>
-                    <a href="edit.php?id=<?php echo $value->id; ?>"><button href="" class="edit">edit</button>
+                    <a href="edit(1).php?id=<?php echo $value->id; ?>"><button href="" class="edit">edit</button>
                     </a>
                     <a href="profilemy.php?id=<?php echo $value->id; ?>"><button href="" class="view">View Profile</button></td>
                     </a>
