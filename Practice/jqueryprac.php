@@ -10,7 +10,7 @@
     <!-- bootstrap : html,css,js 
     JQuery : JS library/Framework ==> TO provide less code and more functionalities -->
 
-<h2 id="para"  class="para">
+<h2 onclick="hideShowPara()" id="para"  class="para">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, perspiciatis. Inventore at consequatur quae sint, qui tenetur totam voluptates? Dolore a aut modi, accusamus autem rem laborum incidunt earum magni.
 </h2>
 
@@ -19,7 +19,7 @@
     <button id="btn1">Hide</button>
     <button onclick="  showPara()">Show</button>
 
-    <button onclick="hideShowPara()">Hide-show</button>
+    <button >Hide-show</button>
     <script>
 
     //     p_tag = document.getElementById('para');
@@ -27,7 +27,7 @@
 // p_tag = $('p')
 
 p_tag = $('.para')
-
+                    // $ = document.getem.... {javascript} 
 b1_tag = $('#btn1')
 
 // b1_tag.click( function hidePara()
@@ -40,22 +40,22 @@ b1_tag = $('#btn1')
 //         p_tag.hide();
 //        })
 
-b1_tag.click(  () =>
-       {
-        p_tag.hide(500);
-       })
+// b1_tag.click(  () =>
+//        {
+//         p_tag.hide(800);
+//        })
 
       
 
-       function showPara()
-       {    
-        p_tag.show(500);
-       }
+//        function showPara()
+//        {    
+//         p_tag.show(500);
+//        }
 
-       function hideShowPara()
-       {
-        p_tag.toggle(500);
-       }
+    //    function hideShowPara()
+    //    {
+    //     p_tag.toggle(500);
+    //    }
    
 
 
@@ -71,18 +71,18 @@ b1_tag.click(  () =>
     //     x=12;
     //    }
 
-    //    function hideShowPara()
-    //    {
-    //     if(p_tag.style.display=="none")
-    //     {
-    //         p_tag.style.display = "block"
-    //     }
+       function hideShowPara()
+       {
+        if(p_tag.style.display=="none")
+        {
+            p_tag.style.color = "red"
+        }
 
-    //     else 
-    //     {
-    //         p_tag.style.display = "none"
-    //     }
-    //    }
+        else 
+        {
+            p_tag.style.display = "none"
+        }
+       }
 
      
 
