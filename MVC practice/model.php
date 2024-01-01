@@ -21,6 +21,27 @@ class model
             $this->connection->query($sql);
 
         }
+
+        public function show($table)
+        {
+            $sql = "SELECT * FROM $table";
+            $data = $this->connection->query($sql);
+            if($data->num_rows>0)
+            {
+                while ($datas = mysqli_fetch_object($data)) 
+                {
+                        $userdata[] = $datas; 
+                }
+            }
+            return $userdata;
+        }
+
+        public function delete($table, $id)
+        {
+            
+            $sql = "DELETE FROM $table WHERE id = $id";
+            $this->connection->query($sql);
+        }
 }
 
 

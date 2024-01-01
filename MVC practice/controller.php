@@ -10,6 +10,7 @@ class controller extends model
             switch ($url) 
             {
                 case '/index':   
+                    // echo "<pre>";
                     // print_r($_SERVER);
                     if(isset($_REQUEST['submit']))
                     {
@@ -25,6 +26,19 @@ class controller extends model
                     }
                 include "index.php";
                     break;
+
+                case '/userdata':
+
+                    $userdata = $this->show('user');
+                    if(isset($_REQUEST['del']))
+                    {   
+                        $id = $_REQUEST['del'];
+                        $this->delete('user',$id);
+                        header('location:userdata');
+                    }
+                    include 'userlist.php';
+                    break;
+                
 
                 
                
