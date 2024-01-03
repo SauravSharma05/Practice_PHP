@@ -27,7 +27,7 @@
          
         <fieldset>
             <legend>
-        User Registration
+        User Registration form
     </legend>
         <form  method="post" enctype="multipart/form-data">
             <br>
