@@ -36,9 +36,15 @@ class controller extends model
                         $this->delete('user',$id);
                         header('location:userdata');
                     }
+                    
                     include 'userlist.php';
                     break;
-                
+                    
+                    case '/updateuser/id':
+                        $id = $_REQUEST;
+                    echo $id;
+
+                    
 
                 
                
