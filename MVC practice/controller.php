@@ -40,10 +40,14 @@ class controller extends model
                     include 'userlist.php';
                     break;
                     
-                    case '/updateuser/id':
-                        $id = $_REQUEST;
-                    echo $id;
-
+                    case '/updateuser':
+                        if(isset($_REQUEST['upd']))
+                        {   
+                            $id = $_REQUEST['upd'];
+                            // echo $id;
+                            $data = $this->showwhere('user',$id);
+                            include "updateuser.php";
+                        }
                     
 
                 

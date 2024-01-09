@@ -42,6 +42,20 @@ class model
             $sql = "DELETE FROM $table WHERE id = $id";
             $this->connection->query($sql);
         }
+
+        public function showwhere($table,$id)
+        {
+            $sql = "SELECT * FROM $table where id=$id";
+            $data = $this->connection->query($sql);
+            if($data->num_rows>0)
+            {
+                while ($datas = mysqli_fetch_object($data)) 
+                {
+                        $userdata[] = $datas; 
+                }
+            }
+            return $userdata;
+        }
 }
 
 

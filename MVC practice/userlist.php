@@ -48,7 +48,7 @@
                             <button name="del" style="background-color: red; color:white" type="submit" value="<?php echo $value->id ?>">Delete </button>
                             
                         </form>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="updateuser" method="post" enctype="multipart/form-data">
 
                             <button type="submit"  value="<?php echo $value->id; ?>" name="upd" class="btn btn-primary">Update</button>
                             
