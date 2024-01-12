@@ -30,10 +30,20 @@
             align-items: center;
             justify-content: center;
         }
-
+        a{
+            text-decoration: none;
+            background-color: red;
+            color: whitesmoke;
+            font-size: 25px;
+            margin-left: 600px;
+            
+        }
     </style>
 </head>
 <body>
+            <hr>
+                <a href="index">BACK TO HOME</a>
+            <hr>
         <fieldset>
             <legend>update user form</legend>
             <form action="" enctype="multipart/form-data" method="post">
