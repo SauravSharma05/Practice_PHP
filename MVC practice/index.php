@@ -31,7 +31,9 @@
     </legend>
         <form  method="post" enctype="multipart/form-data">
             <br>
-            <input type="text" name="name" id=""> <br><hr>
+            <input type="text" name="name" id="" placeholder="Enter Your Name"> <br><hr>
+            <!-- <input type="email" name="email" id="" placeholder="Enter Your Email"> <br><hr> -->
+            <!-- <input type="password" name="password" id="" placeholder="Enter Password Here"> <br><hr> -->
             <input type="file" name="image" id=""><br><hr>
             <input type="submit" value="Register" name="submit">
         </form>

@@ -48,6 +48,27 @@ class controller extends model
                             $data = $this->showwhere('user',$id);
                             include "updateuser.php";
                         }
+                        elseif (isset($_REQUEST['updatedata']))
+                         {
+                            if($_FILES['image']['error'] == UPLOAD_ERR_OK  )
+                            {
+                                $image = "images/".time().$_FILES['image']["name"];
+                                move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                            }
+                            else
+                            {
+                               $image = $_REQUEST["image"];
+                            }
+
+                            $data = array(
+                                "name"=>$_REQUEST["name"],
+                                "image" => $image 
+                            );
+                            $response =$this->update("user",$data ,$_REQUEST["updatedata"]);
+                            header("location:userdata");    
+                        }
+                        break;
+                        
                     
 
                 

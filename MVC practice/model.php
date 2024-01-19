@@ -7,7 +7,6 @@ class model
         {
             $this->connection = new mysqli("localhost","root","","crudnew"); 
         }
-
         public function insert($table, $data)
         {
             $arr = array_keys($data);
@@ -19,9 +18,7 @@ class model
             $sql  = "INSERT INTO $table ($arr1) VALUES ('$val1')";
             echo $sql;
             $this->connection->query($sql);
-
         }
-
         public function show($table)
         {
             $sql = "SELECT * FROM $table";
@@ -35,14 +32,12 @@ class model
             }
             return $userdata;
         }
-
         public function delete($table, $id)
         {
             
             $sql = "DELETE FROM $table WHERE id = $id";
             $this->connection->query($sql);
         }
-
         public function showwhere($table,$id)
         {
             $sql = "SELECT * FROM $table where id=$id";
@@ -56,8 +51,19 @@ class model
             }
             return $userdata;
         }
-}
-
+        public function update($tbl,$values,$id)
+        {
+        $SQL = " UPDATE $tbl SET ";
+        foreach($values as $key => $value)
+        {
+            $SQL .= " $key = '$value' , ";
+        }
+        $SQL = rtrim($SQL," , ");
+        $SQL .= " WHERE id = $id";
+        $sqlex = $this->connection->query($SQL);
+        
+}}
+   
 
 
 ?>

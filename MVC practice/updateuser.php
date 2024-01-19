@@ -59,7 +59,9 @@
                         
                         <input type="text" value="<?php echo $value->name ?>" name="name" id="">
                         <img src="<?php echo $value->image ?>" alt="">
-                        
+                        <input type="file" name="image" id="image">
+                        <button name="updatedata" value="<?php echo $value->id  ?>">Update data</button>
+                                            
                     </div>
                     <?php }}?>
             </form>
