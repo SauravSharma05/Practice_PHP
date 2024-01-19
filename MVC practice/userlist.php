@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>userdata</title>
     <style>
+        *{
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         table{
             border: 1px solid black;
             margin: 0 auto;
-            width: 50%; 
+            width: 80%; 
          }
         tr,th{
             border: 1px solid black;
-            width: 33%;
-
+            width: 25%;
         }
         
         a{
             text-decoration: none;
-            background-color: red;
+            background-color: black;
             color: whitesmoke;
             font-size: 25px;
             margin-left: 600px;
@@ -34,6 +39,10 @@
                 <table>
                     <tr>
                         <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
@@ -42,6 +51,10 @@
                         <form method="post" action="" enctype="multipart/form-data">
 
                             <th><?php echo $value->name ?></th>
+                            <th><?php echo $value->email ?></th>
+                            <th><?php echo $value->address ?></th>
+                            <th><?php echo $value->gender ?></th>
+                            <th><?php echo $value->hobby ?></th>
                             <th><?php echo "<img src='$value->image' alt='' height='100px' width='100px'>" ?></th>
                             <th>
                             
