@@ -18,7 +18,7 @@ class controller extends model
                         $address= $_REQUEST['address'];
                         $password= $_REQUEST['password'];
                         $gender= $_REQUEST['gender'];
-                        $hobby= $_REQUEST['hobby'];
+                        // $hobby= $_REQUEST['hobby'];
                         $file = $_FILES['image']['tmp_name'];
                         $loc = "images/".time().$_FILES['image']['name'];
                         move_uploaded_file($file,$loc);
@@ -26,7 +26,7 @@ class controller extends model
                         "name" => $name,
                         "email" => $email,
                         "address" => $address,
-                        "hobby" => $hobby,
+                        // "hobby" => $hobby,
                         "gender" => $gender,
                         "password" => $password,
                         "image" => $loc,
@@ -73,7 +73,7 @@ class controller extends model
                                 "email"=>$_REQUEST["email"],
                                 "address"=>$_REQUEST["address"],
                                 "gender"=>$_REQUEST["gender"],
-                                "hobby"=>$_REQUEST["hobby"],
+                                // "hobby"=>$_REQUEST["hobby"],
                                 "password"=>$_REQUEST["password"],
                                 "image" => $image 
                             );

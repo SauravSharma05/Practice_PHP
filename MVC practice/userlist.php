@@ -42,7 +42,7 @@
                         <th>Email</th>
                         <th>Address</th>
                         <th>Gender</th>
-                        <th>Hobbies</th>
+                        <!-- <th>Hobbies</th> -->
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
@@ -54,7 +54,6 @@
                             <th><?php echo $value->email ?></th>
                             <th><?php echo $value->address ?></th>
                             <th><?php echo $value->gender ?></th>
-                            <th><?php echo $value->hobby ?></th>
                             <th><?php echo "<img src='$value->image' alt='' height='100px' width='100px'>" ?></th>
                             <th>
                             
