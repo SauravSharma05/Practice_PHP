@@ -55,8 +55,10 @@
 
                 <?php 
                 if(isset($data))
-                {
-
+                {   
+                    echo "<pre>";
+                    print_r($data);
+                    echo "</pre>";
                     foreach ($data as $value) 
                     {?>
                     
@@ -66,12 +68,24 @@
                         <br>
                        EMAIL : <input type="email" value="<?php echo $value->email ?>" name="email" id="">
                         <br>
-                        ADDRESS : <textarea value="<?php echo $value->address ?>" name="address" id="address" cols="30" rows="10" ></textarea>
+                        ADDRESS : <textarea  name="address" id="address" cols="30" rows="10" ><?php echo $value->address ?></textarea>
                         <br>
                         GENDER : 
                         <div class="gen">
-                            <label for="male">Male  : </label><input class="rad" type="radio" name="gender" value="male" id="male">
-                            <label for="male">Female  : </label><input type="radio" class="rad" name="gender" value="female" id="female">
+
+                            <?php if(($value->gender == "male"))
+                            {
+                                echo "<label for='male'>Male  : </label><input class='rad' type='radio' checked name='gender' value='male' id='male'>";
+                                echo "<label for='female'>Female  : </label><input class='rad' type='radio' name='gender' value='female' id='female'>";
+                                // echo "male it is";
+                            }
+                            else{
+                                echo "<label for='male'>Male  : </label><input class='rad' type='radio' name='gender' value='male' id='male'>";
+                                echo "<label for='female'>Female  : </label><input class='rad' type='radio' checked name='gender' value='female' id='female'>";
+                                // echo "female it is";
+                            }
+                            ?>
+                            
                         </div>
                         <br>
 

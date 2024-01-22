@@ -37,7 +37,7 @@ class controller extends model
                     break;
 
                 case '/userdata':
-
+        
                     $userdata = $this->show('user');
                     if(isset($_REQUEST['del']))
                     {   
@@ -58,7 +58,7 @@ class controller extends model
                             include "updateuser.php";
                         }
                         else if (isset($_REQUEST['updatedata']))
-                         {
+                        {  
                             if($_FILES['image']['error'] == UPLOAD_ERR_OK  )
                             {
                                 $image = "images/".time().$_FILES['image']["name"];
