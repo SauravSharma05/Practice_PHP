@@ -55,15 +55,16 @@ class controller extends model
                             $id = $_REQUEST['upd'];
                             // echo $id;
                             $data = $this->showwhere('user',$id);
+                        
                             include "updateuser.php";
                         }
                         else if (isset($_REQUEST['updatedata']))
-                        {  
-                            if($_FILES['image']['error'] == UPLOAD_ERR_OK  )
+                        {
+                            if($_FILES['image']['error'] == 0  )
                             {
-                                $image = "images/".time().$_FILES['image']["name"];
+                                $image = "images/".time().$_FILES['image']['name'];
                                 move_uploaded_file($_FILES['image']['tmp_name'],$image);
-                            }
+                                }
                             else
                             {
                                $image = $_REQUEST["image"];
@@ -74,9 +75,9 @@ class controller extends model
                                 "address"=>$_REQUEST["address"],
                                 "gender"=>$_REQUEST["gender"],
                                 // "hobby"=>$_REQUEST["hobby"],
-                                "password"=>$_REQUEST["password"],
+                                // "password"=>$_REQUEST["password"],
                                 "image" => $image 
-                            );
+                         );
                             $response =$this->update("user",$data ,$_REQUEST["updatedata"]);
                             header("location:userdata");    
                         }

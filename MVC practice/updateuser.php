@@ -92,7 +92,7 @@
                         PROFILE PIC : 
                         <img src="<?php echo $value->image ?>" alt="">
                         <br>
-                        <input type="file" name="image" id="image">
+                        <input type="file"  name="image" id="image">
                         <button name="updatedata" value="<?php echo $value->id  ?>">Update data</button>
                                             
                     </div>
