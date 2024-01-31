@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" onsubmit="hello();">
+        <input type="date" name="date1" id="date1"> <br>
+        <input type="date" name="date2" id="date2"> <br>
+        <button type="submit" id="submit">submit</button>
+    </form>
+    
+</body>
+</html>
+
+<script>
+
+    function hello()
+    {
+        a = document.getElementById('date1').value
+        b = document.getElementById('date2').value
+        console.log(a);
+        console.log(b);
+    }
+    hello()
+</script>
