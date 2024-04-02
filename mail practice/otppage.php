@@ -18,25 +18,20 @@
 </head>
 
 <body>
-
-        <h1>SEND OTP PAGE</h1>
+    <h1>OTP Verify PAGE</h1>
         
     <a href="index">back to homepage</a>
 
     <div class="mainbox">
 
-        <form method="post" action="otppage">
+        <form method="post" action="">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <label for="otp">Verify OTP</label>
+                <input type="number" name="otp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter OTP">
             </div>
             <br>
-            <button type="submit" name="sendotp" class="btn btn-primary">Send OTP</button>
+            <button type="submit" name="verifyotp" class="btn btn-primary">Verify</button>
         </form>
     </div>
 </body>
-
-
-
-
 </html>

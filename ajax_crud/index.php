@@ -13,6 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="ajax/ajax.js"></script>
+    <style>
+        .tablebox{
+            width: 80%;
+            margin: 50px auto;
+        }
+    </style>
 
 </head>
 
@@ -40,14 +46,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
-            <form id="user_form">
+                <form id="user_form">
 
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addModalLabel">Registration Form</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                   
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Registration Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
 
                         <div class="mb-3 mt-3">
                             <label for="email" class="form-label">Name:</label>
@@ -69,20 +75,45 @@
                             <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="city">
                         </div>
 
-                     
-                  
-                </div>
-                <div class="modal-footer">
 
-                <input type="hidden"  value="1" name="type">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="btn_add">Add</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <input type="hidden" value="1" name="type">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btn_add">Add</button>
+                    </div>
 
                 </form>
             </div>
+
+
         </div>
     </div>
+
+
+    <div class="tablebox">
+
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 
 </body>
 
