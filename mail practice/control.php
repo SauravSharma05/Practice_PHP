@@ -45,7 +45,7 @@ class controller extends model
                     $mail->Host = 'smtp.gmail.com';              // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                     // Enable SMTP authentication
                     $mail->Username   = 'sauravsharma0512@gmail.com';                     //SMTP username
-                    $mail->Password   = 'llfwgxbpmozyandh';  // your password 2step varified 
+                    $mail->Password   = '';  // your password 2step varified 
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port = 587;     //587 is used for Outgoing Mail (SMTP) Server.
                     $mail->setFrom('sauravsharma0512@gmail.com', 'Admin Password Reset');
