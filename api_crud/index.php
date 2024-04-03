@@ -17,8 +17,8 @@
      <form action="" id="form_data" method="post">
      
         <input type="text" placeholder="name" name="name" id="name">
-        <input type="email" name="age" placeholder="email" id="email">
-        <input type="text" name="city" id="dept" placeholder="dept">
+        <input type="email" name="email" placeholder="email" id="email">
+        <input type="text" name="dept" id="dept" placeholder="dept">
         
         <button type="submit" id="add_data">Submit</button>
     </form>
@@ -32,7 +32,7 @@
             var obj = {};
 
             for (var a = 0; a < arr.length; a++) {
-                if (arr[a].value ==="") {
+                if (arr[a].value =="") {
                     return false;
                 }
                 obj[arr[a].name] = arr[a].value;
