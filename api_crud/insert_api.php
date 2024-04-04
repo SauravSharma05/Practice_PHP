@@ -16,5 +16,11 @@ $run = $connection->query($sql);
 
 
 
+if($run){
+	echo json_encode(array('message' => ' Record Inserted.', 'status' => true));
 
+}else{
+
+ echo json_encode(array('message' => ' Record Not Inserted.', 'status' => false));
+}
 ?>
