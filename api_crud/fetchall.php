@@ -16,7 +16,7 @@ $run = $connection->query($sql);
 if(mysqli_num_rows($run) > 0)
 {
     $output = mysqli_fetch_all($run, MYSQLI_ASSOC);
-    json_encode($output);
+     echo json_encode($output);
 }
 
 

@@ -11,10 +11,14 @@
             width: 70%;
             border: 1px solid black;
         }
-        td,tr{
+        td{
+            background-color: lightsteelblue;
             border: 1px solid black;
-            background-color: khaki;
+        }
+        th{
             font-weight: bold;
+        }
+        tr{
             font-family: sans-serif;
         }
     </style>
@@ -40,17 +44,13 @@
     <br>
     <table>
         <tr>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Dept</td>
+            <td><b>Name</b></td>
+            <td><b>Email</b></td>
+            <td><b>Department</b></td>
+            <td>Action</td>
         </tr>
         <tbody id="formdata"></tbody>
     </table>
-
-
-
-
-
 
 
     <script>
@@ -63,11 +63,7 @@
                     url: 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/fetchall.php',
                     type: "GET",
 
-                    success: function(data) {
-                        if (data.status == true) 
-                        {
-                            // loadTable();
-                            $.each(data, function(key,value) {
+                    success: function(data) {$.each(data, function(key,value) {
 
                                 $("#formdata").append(
                                     "<tr>"+
@@ -78,7 +74,6 @@
                                 );
 
                             })
-                        }
                     }
                 })
         }
@@ -102,10 +97,7 @@
         $("#add_data").on("click", function(e) {
             e.preventDefault();
 
-            // x =  $('#form_data').serialize();
-
             var x = jsonData('#form_data');
-
 
             if (x == false) {
                 message('field required', false);
