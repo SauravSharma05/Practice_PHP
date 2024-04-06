@@ -6,79 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API CRUD</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <style>
-        table{
-            width: 70%;
-            border: 1px solid black;
-        }
-        td{
-            background-color: lightsteelblue;
-            border: 1px solid black;
-        }
-        th{
-            font-weight: bold;
-        }
-        tr{
-            font-family: sans-serif;
-        }
-    </style>
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- save-button ::: onclick
      jsondData(#addForm) -->
 
-    <form action="" id="form_data" method="post">
+    <div class="box">
+        <form action="" id="form_data" method="post">
 
-        <input type="text" placeholder="name" name="name" id="name">
-        <input type="email" name="email" placeholder="email" id="email">
-        <input type="text" name="dept" id="dept" placeholder="dept">
+            <input type="text" placeholder="NAME" name="name" id="name">
+            <input type="email" name="email" placeholder="EMAIL" id="email">
+            <input type="text" name="dept" id="dept" placeholder="DEPARTMENT">
 
-        <button type="submit" id="add_data">Submit</button>
-    </form>
-    <br>
-    <hr>
-    <br>
-    <table>
-        <tr>
-            <td><b>Name</b></td>
-            <td><b>Email</b></td>
-            <td><b>Department</b></td>
-            <td>Action</td>
-        </tr>
-        <tbody id="formdata"></tbody>
-    </table>
-
+            <button type="submit" class="submit-button" id="add_data">Submit</button>
+        </form>
+        <br><hr><br>
+        <table>
+            <tr>
+                <th><b>Name</b></th>
+                <th><b>Email</b></th>
+                <th><b>Department</b></th>
+                <th>Action</th>
+            </tr>
+            <tbody id="formdata"></tbody>
+        </table>
+    </div>
 
     <script>
-
-        function loadtable()
-        {
+        function loadtable() {
             $('#formdata').html("");
 
             $.ajax({
-                    url: 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/fetchall.php',
-                    type: "GET",
+                url: 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/fetchall.php',
+                type: "GET",
 
-                    success: function(data) {$.each(data, function(key,value) {
+                success: function(data) {
+                    $.each(data, function(key, value) {
 
-                                $("#formdata").append(
-                                    "<tr>"+
-                                    "<td>"+value.name+"</td>"+
-                                    "<td>"+value.email+"</td>"+
-                                    "<td>"+value.dept+"</td>"+
-                                    "</tr>"
-                                );
+                        $("#formdata").append(
+                            "<tr>" +
+                            "<td>" + value.name + "</td>" +
+                            "<td>" + value.email + "</td>" +
+                            "<td>" + value.dept + "</td>" +
+                            "<td> <button class='edit-btn' data-eid='"+ value.id + "'>Edit</button> " + 
+                            "<button class='delete-btn' data-id='"+ value.id + "'>Delete</button></td>" + 
+                                   
+                            "</tr>"
+                        );
 
-                            })
-                    }
-                })
+                    })
+                }
+            })
         }
         loadtable();
-        
+
         function jsonData(hey) {
             var arr = $(hey).serializeArray();
 
@@ -113,10 +96,35 @@
                             $('#form_data').trigger("reset");
                         }
                     }
-                }) }
-
-
+                })
+            }
         });
+
+
+
+            $(document).on("click",".delete-btn",function(){
+            if(confirm("delete this record ? ")){
+                
+            var userId = $(this).data("id");
+            var obj = {id : userId};
+            var myJSON = JSON.stringify(obj);
+
+            var row = this;
+
+            $.ajax({
+            url : 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/deleteuser.php',
+            type : "POST",
+            data : myJSON,
+            success : function(data){
+                // message(data.message, data.status);
+
+                if(data.status == true){
+                $(row).closest("tr").fadeOut();
+                }
+            }
+            });
+            }
+        });   
     </script>
 </body>
 

@@ -1,0 +1,42 @@
+table {
+    border: 1px solid black;
+    width: 100%;
+}
+td {
+    background-color: rgb(212, 221, 233);
+    border: 1px solid black;
+    height: 30px;
+}
+input{
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+}
+th{
+    border: 1px solid black;
+    height: 50px;
+    background-color: tomato;
+    color: yellow;
+}
+tr {
+    font-family: sans-serif;
+}
+button{
+    border-radius:5px;
+    height: 25px;
+}
+.submit-button{
+    background-color: green;
+    color: white;
+}
+.delete-btn{
+    background-color: red;
+    color: white;
+}
+.edit-btn{
+    background-color: yellow;
+}
+.box {
+    width: 80%;
+    margin: 30px auto;
+}
