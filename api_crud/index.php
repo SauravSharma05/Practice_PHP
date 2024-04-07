@@ -34,6 +34,35 @@
         </table>
     </div>
 
+    <div id="modal">
+    <div id="modal-form">
+      <h2>Edit Form</h2>
+      <form action="" id="edit-form">
+      <table cellpadding="10px" width="100%">
+        <tr>
+          <td width="90px">Name</td>
+          <td><input type="text" name="name" id="edit-name">
+              <input type="text" name="id" id="edit-id" hidden="">
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" name="email" id="edit-email"></td>
+        </tr>
+        <tr>
+          <td>Department</td>
+          <td><input type="text" name="dept" id="edit-dept"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="button" id="edit-submit" value="Update"></td>
+        </tr>
+      </table>
+      </form>
+      <div id="close-btn">x</div>
+    </div>
+  </div>
+
     <script>
         function loadtable() {
             $('#formdata').html("");
