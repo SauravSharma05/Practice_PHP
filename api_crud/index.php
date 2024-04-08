@@ -154,6 +154,26 @@
             });
             }
         });   
+
+
+        $(document).on("click",".edit-btn",function(){
+                $("#modal").show();
+                var userId = $(this).data("id");
+                var obj = {sid : userId};
+                var myJSON = JSON.stringify(obj);
+
+                $.ajax({
+                url : 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/deleteuser.php',
+                type : "POST",
+                data : myJSON,
+                success : function(data){
+                    $("#edit-id").val(data[0].id);
+                    $("#edit-name").val(data[0].name);
+                    $("#edit-email").val(data[0].email);
+                    $("#edit-dept").val(data[0].dept);
+                }
+    });
+  });
     </script>
 </body>
 
