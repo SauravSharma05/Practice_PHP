@@ -174,6 +174,30 @@
                 }
     });
   });
+
+  $("#edit-submit").on("click",function(e){
+    e.preventDefault();
+
+    var jsonObj = jsonData("#edit-form");
+
+    if( jsonObj == false){
+      message("All Fields are required.",false);
+    }else{
+      $.ajax({ 
+      url : 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/updateuser.php',
+      type : "POST",
+      data : jsonObj,
+      success : function(data){
+        message(data.message, data.status);
+
+        if(data.status == true){
+          $("#modal").hide();
+          loadTable();
+        }
+      }
+    });
+  }
+  });
     </script>
 </body>
 
