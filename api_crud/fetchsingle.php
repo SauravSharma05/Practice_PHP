@@ -20,6 +20,6 @@ if(mysqli_num_rows($result) > 0 ){
 
 }else{
 
- echo json_encode(array('message' => 'No Record Found.', 'status' => false));
+ echo json_encode(array('message' => 'No data Found.', 'status' => false));
 
 }    
