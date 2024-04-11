@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API CRUD</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -155,23 +157,22 @@
             }
         });   
 
-
         $(document).on("click",".edit-btn",function(){
-                $("#modal").show();
-                var userId = $(this).data("id");
-                var obj = {sid : userId};
-                var myJSON = JSON.stringify(obj);
+    $("#modal").show();
+    var userId = $(this).data("eid");
+    var obj = {eid : userId};
+    var myJSON = JSON.stringify(obj);
 
-                $.ajax({
-                url : 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/deleteuser.php',
-                type : "POST",
-                data : myJSON,
-                success : function(data){
-                    $("#edit-id").val(data[0].id);
-                    $("#edit-name").val(data[0].name);
-                    $("#edit-email").val(data[0].email);
-                    $("#edit-dept").val(data[0].dept);
-                }
+    $.ajax({
+      url : 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/fetchsingle.php',
+      type : "POST",
+      data : myJSON,
+      success : function(data){
+        $("#edit-id").val(data[0].id);
+        $("#edit-name").val(data[0].name);
+        $("#edit-email").val(data[0].email);
+        $("#edit-dept").val(data[0].dept);
+      }
     });
   });
 
@@ -179,7 +180,7 @@
     e.preventDefault();
 
     var jsonObj = jsonData("#edit-form");
-
+    // console.log(jsonObj);
     if( jsonObj == false){
       message("All Fields are required.",false);
     }else{
@@ -198,6 +199,7 @@
     });
   }
   });
+
     </script>
 </body>
 

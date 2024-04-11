@@ -15,7 +15,9 @@ include "config.php";
 
 $sql = "UPDATE users SET name = '{$name}', email = {$email}, dept = '{$dept}' WHERE id = {$id}";
 
-if(mysqli_query($conn, $sql)){
+$run = $connection->query($sql);
+
+if($run){
 	echo json_encode(array('message' => 'users data Updated.', 'status' => true));
 }else{
   echo json_encode(array('message' => 'users data not Updated.', 'status' => false));
