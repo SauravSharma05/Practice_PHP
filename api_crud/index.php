@@ -36,6 +36,8 @@
         </table>
     </div>
 
+    <!-- ------------------ -->
+
     <div id="modal">
     <div id="modal-form">
       <h2>Edit Form</h2>
@@ -68,7 +70,7 @@
     <script>
         function loadtable() {
             $('#formdata').html("");
-
+            
             $.ajax({
                 url: 'http://localhost/php_practice/practice%20php%20pages/PHP_Nirav_cg/Practice_PHP/api_crud/fetchall.php',
                 type: "GET",
@@ -98,8 +100,10 @@
 
             var obj = {};
 
-            for (var a = 0; a < arr.length; a++) {
-                if (arr[a].value == "") {
+            for (var a = 0; a < arr.length; a++) 
+            {
+                if (arr[a].value == "")   
+                {
                     return false;
                 }
                 obj[arr[a].name] = arr[a].value;
@@ -147,7 +151,6 @@
             type : "POST",
             data : myJSON,
             success : function(data){
-                // message(data.message, data.status);
 
                 if(data.status == true){
                 $(row).closest("tr").fadeOut();
@@ -177,7 +180,7 @@
   });
 
   $("#edit-submit").on("click",function(e){
-    e.preventDefault();
+    e.preventDefault(); 
 
     var jsonObj = jsonData("#edit-form");
     // console.log(jsonObj);
@@ -189,11 +192,11 @@
       type : "POST",
       data : jsonObj,
       success : function(data){
-        message(data.message, data.status);
 
-        if(data.status == true){
+        if(data.status == true)
+        {
           $("#modal").hide();
-          loadTable();
+          loadtable();
         }
       }
     });
