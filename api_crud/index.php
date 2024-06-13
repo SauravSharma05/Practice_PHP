@@ -79,7 +79,7 @@
                     $.each(data, function(key, value) {
 
                         $("#formdata").append(
-                            "<tr>" +
+                            "<tr>" + 
                             "<td>" + value.name + "</td>" +
                             "<td>" + value.email + "</td>" +
                             "<td>" + value.dept + "</td>" +
@@ -87,8 +87,7 @@
                             "<button class='delete-btn' data-id='"+ value.id + "'>Delete</button></td>" + 
                                    
                             "</tr>"
-                        );
-
+                        );             
                     })
                 }
             })
@@ -137,9 +136,10 @@
 
 
 
-            $(document).on("click",".delete-btn",function(){
-            if(confirm("delete this record ? ")){
-                
+            $(document).on("click",".delete-btn",function()
+            {
+            if(confirm("delete this record ? "))
+            {
             var userId = $(this).data("id");
             var obj = {id : userId};
             var myJSON = JSON.stringify(obj);
@@ -177,9 +177,9 @@
         $("#edit-dept").val(data[0].dept);
       }
     });
-  });
-
-  $("#edit-submit").on("click",function(e){
+    });
+    
+    $("#edit-submit").on("click",function(e){
     e.preventDefault(); 
 
     var jsonObj = jsonData("#edit-form");
